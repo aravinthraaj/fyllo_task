@@ -12,7 +12,7 @@ export function getData(data, parent, child) {
     let statistics = {}
 
     for (let key in data) {
-      statistics[key] = new Array()
+      statistics[key] = []
       for (let childkey in data[key]) {
         let tempdata = { [objKey]: childkey, value: data[key][childkey] }
         statistics[key].push(tempdata)
@@ -32,7 +32,7 @@ export function getData(data, parent, child) {
   // let child = "product"
   for (let obj of data) {
     if (!states.hasOwnProperty(obj[parent])) {
-      states[obj[parent]] = new Object()
+      states[obj[parent]] = {}
       states = findRepeated(obj[parent], obj[child], states)
     } else {
       states = findRepeated(obj[parent], obj[child], states)
@@ -50,56 +50,3 @@ export function capitalizeWords(string) {
   })
 }
 
-export const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-]
-
-export const states = [
-  "Andaman & Nicobar",
-  "Andhra Pradesh",
-  "Arunachal Pradesh",
-  "Assam",
-  "Bihar",
-  "Chandigarh",
-  "Chattishgarh",
-  "Dadra & Nagar Haveli",
-  "Delhi",
-  "Goa",
-  "Gujarat",
-  "Harayana",
-  "Himachal Pradesh",
-  "Jammu & Kashmir",
-  "Jharkhand",
-  "Karnataka",
-  "Kerala",
-  "Madhya Pradesh",
-  "Maharastra",
-  "Manipur",
-  "Megalaya",
-  "Mizoram",
-  "Nagaland",
-  "Orissa",
-  "Pondicherry",
-  "Punjab",
-  "Rajasthan",
-  "Tamil Nadu",
-  "Tripura",
-  "Telangana",
-  "Uttar Pradesh",
-  "Uttaranchal",
-  "West Bengal",
-  "Daman & Diu",
-  "Lakshadweep",
-  "Sikkim",
-]

@@ -1,4 +1,3 @@
-import { useState } from "react"
 import "./ProductList.css"
 import { data } from "../../result"
 import { AgGridReact } from "ag-grid-react"
