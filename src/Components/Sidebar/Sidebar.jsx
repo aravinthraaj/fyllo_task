@@ -3,8 +3,9 @@ import "./Sidebar.css"
 import { Link } from "react-router-dom"
 import {
   TrendingUp,
-  PermIdentity,
+  Inventory2
 } from "@mui/icons-material"
+
 
 function Sidebar() {
   return (
@@ -21,19 +22,12 @@ function Sidebar() {
             </Link>
             <Link to="/product" className="link">
               <li className="sidebarListItem">
-                <PermIdentity className="sidebarIcon" />
-                Users
+                <Inventory2 className="sidebarIcon" />
+                Products
               </li>
             </Link>
 
-            <li className="sidebarListItem">
-              {/* <Timeline className="sidebarIcon" /> */}
-              Analytics
-            </li>
-            <li className="sidebarListItem">
-              {/* <TrendingUp className="sidebarIcon" /> */}
-              Sales
-            </li>
+
           </ul>
         </div>
       </div>

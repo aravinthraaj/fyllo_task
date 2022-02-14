@@ -40,13 +40,13 @@ function Chart({
         </h5>
         <select onChange={OnchangeSetView}>
           {Object.keys(a).map((e) => {
-            return <option value={e}>{e}</option>
+            return <option key={e} value={e}>{e}</option>
           })}
         </select>
       </div>
-      <ResponsiveContainer width="100%" height="100%" aspect={2 / 1}>
+      <ResponsiveContainer width="100%" height="100%" aspect={2/1}>
         <BarChart
-          width={500}
+          width={700}
           height={300}
           data={a[view]}
           margin={{

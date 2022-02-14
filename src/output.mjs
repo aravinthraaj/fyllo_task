@@ -9490,27 +9490,6 @@ const data = [
 //   return results
 // }
 
-// let states = {}
-// let parent = "state"
-// let child = "product"
-// for (let obj of data) {
-//   if (!states.hasOwnProperty(obj[parent])) {
-//     states[obj[parent]] = new Object()
-//     states = findRepeated(obj[parent], obj[child], states)
-//   } else {
-//     states = findRepeated(obj[parent], obj[child], states)
-//   }
-// }
-
-function findRepeated(parent, child, results) {
-  if (child in results[parent]) {
-    results[parent][child] += 1
-  } else {
-    results[parent][child] = 1
-  }
-  return results
-}
-
 let states = {}
 let parent = "state"
 let child = "product"
@@ -9522,24 +9501,55 @@ for (let obj of data) {
     states = findRepeated(obj[parent], obj[child], states)
   }
 }
-// console.log(states)
 
-let statistics = {}
-
-for (let key in states) {
-  statistics[key] = new Array()
-  for (let childkey in states[key]) {
-    let tempdata = { product: childkey, value: states[key][childkey] }
-    statistics[key].push(tempdata)
+function findRepeated(parent, child, results) {
+  if (child in results[parent]) {
+    results[parent][child] += 1
+  } else {
+    results[parent][child] = 1
   }
+  return results
 }
+console.log(Object.keys(states))
 
-let b = {
-  test:1,
-  test2:3
-}
+// let states = {}
+// let parent = "state"
+// let child = "product"
+// for (let obj of data) {
+//   if (!states.hasOwnProperty(obj[parent])) {
+//     states[obj[parent]] = new Object()
+//     states = findRepeated(obj[parent], obj[child], states)
+//   } else {
+//     states = findRepeated(obj[parent], obj[child], states)
+//   }
+// }
+// // console.log(states)
 
-let arr = Object.keys(b)
+// let statistics = {}
 
-console.log(arr[0])
+// for (let key in states) {
+//   statistics[key] = new Array()
+//   for (let childkey in states[key]) {
+//     let tempdata = { product: childkey, value: states[key][childkey] }
+//     statistics[key].push(tempdata)
+//   }
+// }
 
+// let b = {
+//   test:1,
+//   test2:3
+// }
+
+// let arr = Object.keys(b)
+
+// console.log(arr[0])
+
+let a = data.filter((obj) => {
+  if (obj["state"]==="Uttaranchal" && obj["month"]==="July") {
+    return true
+  }
+})
+
+
+// console.log(a);
+console.log(Object.keys(data))
