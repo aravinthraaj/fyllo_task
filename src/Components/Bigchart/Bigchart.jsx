@@ -90,6 +90,7 @@ function Bigchart({
     if (obj["state"] === statevalue && obj["month"] === monthvalue) {
       return true
     }
+    return false
   })
   for (let element of chartData) {
     element["requirement_in_mt_"] = parseFloat(element["requirement_in_mt_"])
