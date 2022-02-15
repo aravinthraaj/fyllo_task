@@ -94,13 +94,6 @@ To run this project, You’ll need to have
    ```
    <p align="right">(<a href="#top">back to top</a>)</p>
 
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- CONTACT -->
 
 ## Contact
 
