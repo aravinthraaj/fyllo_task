@@ -50,3 +50,26 @@ export function capitalizeWords(string) {
   })
 }
 
+export function getPieData(data, valueData) {
+  const chartData = data.reduce((carry, item) => {
+    const { product, [valueData]: req } = item
+
+    if (!(product in carry)) {
+      carry[product] = 0
+    }
+
+    carry[product] += parseFloat(req)
+
+    return carry
+  }, {})
+
+  const finalData = [...Object.entries(chartData)]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+    .map((entry) => ({
+      name: entry[0],
+      value: entry[1],
+    }))
+
+  return finalData
+}

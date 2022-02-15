@@ -1,7 +1,8 @@
 import { PieChart, Pie, Cell, Tooltip } from "recharts"
 import "./Piechart.css"
+import { getPieData } from "../../utils.js"
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"]
+const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#FF0000"]
 
 const RADIAN = Math.PI / 180
 const renderCustomizedLabel = ({
@@ -30,41 +31,19 @@ const renderCustomizedLabel = ({
   )
 }
 
-function Piechart({ data,title,dataKey }) {
-  let chartData = {}
-  for (let element of data) {
-    if (chartData[element["product"]]) {
-      chartData[element["product"]] += parseFloat(element[dataKey])
-    } else {
-      chartData[element["product"]] = parseFloat(element[dataKey])
-    }
-  }
-  console.log(chartData)
-  var sortable = []
-  for (let data in chartData) {
-    sortable.push([data, chartData[data]])
-  }
-
-  sortable.sort(function (a, b) {
-    return b[1] - a[1]
-  })
-  let finaldata = []
-  for (let i = 0; i < 5; i++) {
-    finaldata.push({ name: sortable[i][0], value: sortable[i][1] })
-  }
-  console.log(finaldata)
+function Piechart({ data, title, dataKey }) {
+  let chartData = getPieData(data, dataKey)
   return (
     <div className="piechart">
       <h3 className="piechartTitle">{title}</h3>
-      <PieChart width={500} height={500} aspect={2/1}>
+      <PieChart width={500} height={500} aspect={2 / 1}>
         <Pie
-          data={finaldata}
+          data={chartData}
           cx={250}
           cy={220}
           labelLine={false}
           label={renderCustomizedLabel}
           outerRadius={170}
-          fill="#8884d8"
           dataKey="value"
         >
           {data.map((entry, index) => (
