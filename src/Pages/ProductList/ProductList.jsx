@@ -47,7 +47,7 @@ const columns = [
   },
   {
     field: "requirement_in_mt_",
-    filter: "agNumberColumnFilter",
+    filter: "agTextColumnFilter",
     headerName: "Requirement (MT)",
     width: 250,
     sortable: true,
@@ -55,7 +55,7 @@ const columns = [
   },
   {
     field: "availability_in_mt_",
-    filter: "agNumberColumnFilter",
+    filter: "agTextColumnFilter",
     headerName: "Availability (MT)",
     width: 190,
     sortable: true,
