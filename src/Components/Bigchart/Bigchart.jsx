@@ -143,7 +143,7 @@ function Bigchart({
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="requirement_in_mt_" fill="#8884d8" />
+          <Bar dataKey="requirement_in_mt_" fill="#60AC4A" />
           <Bar dataKey="availability_in_mt_" fill="#FF6347" />
         </BarChart>
       </ResponsiveContainer>

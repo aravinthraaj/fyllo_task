@@ -13,7 +13,7 @@ function Featured() {
             title="State wise product"
             grid
             parent="state"
-            child="month"
+            child="product"
             defaultValue={data[0]}
           />
         </div>
