@@ -17,6 +17,12 @@
   width: 500px;
 }
 
+.featuredpiechart{
+  display: flex;
+  justify-content: space-around;
+  
+}
+
 /* .featuredItem {
   height: 100vh;
   flex: 1;

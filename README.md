@@ -78,7 +78,7 @@ To run this project, You’ll need to have
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/aravinthraaj/Interview-Task
+   git clone https://github.com/aravinthraaj/fyllo_task
    ```
 2. Install packages
    ```sh

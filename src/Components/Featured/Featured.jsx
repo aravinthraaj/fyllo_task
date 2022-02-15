@@ -2,10 +2,29 @@ import { data } from "../../result.js"
 import "./Featured.css"
 import Chart from "../Chart/Chart"
 import Bigchart from "../Bigchart"
+import Piechart from "../Piechart"
 
 function Featured() {
   return (
     <div className="featured">
+      
+      <div className="featuredpiechart">
+        <Piechart
+          data={data}
+          title="Top 5 Required products"
+          dataKey="requirement_in_mt_"
+        />
+        <Piechart
+          data={data}
+          title="Top 5 Available products"
+          dataKey="availability_in_mt_"
+        />
+      </div>
+      <Bigchart
+        data={data}
+        title="Product Availability and Requirements"
+        grid
+      />
       <div className="featuredItem">
         <div className="widgetsm">
           <Chart
@@ -40,12 +59,6 @@ function Featured() {
           />
         </div>
       </div>
-      <Bigchart
-        data={data}
-        title="Product Availability and Requirements"
-        grid
-
-      />
     </div>
   )
 }
