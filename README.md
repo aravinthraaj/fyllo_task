@@ -10,10 +10,9 @@
     A Dashboard for chemical fertilizer company
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://fyllotask.netlify.app/">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-
+    <a href="https://github.com/aravinthraaj/fyllo_task/issues">Report Bug</a>
 
   </p>
 </div>
